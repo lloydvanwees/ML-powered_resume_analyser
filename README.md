@@ -1,54 +1,142 @@
 # Resume-Analyser
 
-A Machine Learning powered resume analyzer that runs locally.
+Local, privacy-friendly resume analysis and classification using traditional ML and modern embeddings. Convert resumes, train a classifier, predict categories, and generate actionable advice — all on your machine.
 
 This project was inspired by [SpicychieF05's AI Powered Resume Screening System](https://github.com/SpicychieF05/Ai-Resume-Screening-System).
 
+## Features
+
+- Resume-to-text conversion for CSV and PDF datasets
+- TF‑IDF + Logistic Regression baseline classifier
+- Optional sentence-transformer embeddings for richer features
+- Simple CLI scripts for converting, training, predicting, and advice
+- Configurable via `config.yaml`
+
+## Quickstart
+
+1. Create and activate a virtual environment (recommended).
+
+```bash
+python -m venv .venv
+. .venv/Scripts/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+```
+
+2. Install dependencies.
+
+```bash
+pip install -r requirements.txt
+# Temporary compatibility pin
+pip install numpy==1.26.0 --force-reinstall
+```
+
+3. Prepare data (see Data section) and run the pipeline below.
+
 ## Data
 
-The training data is from [here](https://www.kaggle.com/datasets/gauravduttakiit/resume-dataset?select=UpdatedResumeDataSet.csv)<br>
-The test data is from [here](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset)
+- Training data: [Kaggle: UpdatedResumeDataSet.csv](https://www.kaggle.com/datasets/gauravduttakiit/resume-dataset?select=UpdatedResumeDataSet.csv)
+- Test data: [Kaggle: Resume Dataset](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset)
 
-Install requirements with `pip install -r requirements.txt`. Then, do `pip install numpy==1.26.0 --force-reinstall` for compatibility. <br>
+Recommended layout:
 
-## Converting resume data to text data
+```
+data/
+  raw/
+    UpdatedResumeDataSet.csv
+  test/
+    <your_pdf_files>.pdf
+  processed/
+    converted/
+```
 
-### CSV
+## Usage
 
-To convert the csv data to text data, run the following: <br>
-`python src/convert_dataset.py --csv data/raw/UpdatedResumeDataSet.csv --outdir data/processed/converted`<br>
+### 1) Convert resume data to plain text
 
-### PDF
+CSV to text:
 
-To convert pdf data to text data, run the following: <br>
-`python src/convert_test_data.py --pdfdir <data directory> --outdir <desired output directory>
-`
-<br>
+```bash
+python src/convert_dataset.py \
+  --csv data/raw/UpdatedResumeDataSet.csv \
+  --outdir data/processed/converted
+```
 
-> For the time being, you can ignore the bad naming scheme, that will be fixed later to clarity
+PDF directory to text:
 
-## train_classifier.py
+```bash
+python src/convert_test_data.py \
+  --pdfdir data/test \
+  --outdir data/processed/converted_test
+```
 
-Initial training with Logistic Regression. Run with `python src/train_classifier.py`. <br>
-Example output: <br>
+> The CLI naming may be refined in future iterations.
+
+### 2) Train the classifier
+
+```bash
+python src/train_classifier.py
+```
+
+Example output plot:
 ![./assets/Logistic_Regression_Test.png](./assets/Logistic_Regression_Test.png)
 
-> Will experiment with other algorithms as well
+> Additional algorithms will be experimented with in future updates.
 
-## predict.py
+### 3) Predict a category for a processed resume
 
-For testing predicted category based on processed resume. <br>
+```bash
+python src/predict.py --input <path_to_text_file>
+```
 
-> Also works on test data
+### 4) Generate resume advice (MVP)
 
-## advice.py
+```bash
+python src/advice.py --input <path_to_text_file>
+```
 
-This is an MVP version of the Resume-Analyser (more like pre-beta). The test was done on a data science resume, and the criterea was the following:
+The current advice checks for:
 
-1. **Length**: Is the resume too short?
-2. **Missing keywords**: Are key terms like "Python", "machine learning", etc., missing?
-3. **Missing sections**: Are "Experience", "Projects", "Education", or "Skills" missing?
-4. **Soft skills**: Check for mentions of soft skills (e.g., communication, leadership).
-5. **Role match**: Check how close the resume is to a target career path (e.g., Data Science).
+1. **Length** — is the resume too short?
+2. **Missing keywords** — e.g., "Python", "machine learning"
+3. **Missing sections** — Experience, Projects, Education, Skills
+4. **Soft skills** — mentions of communication, leadership, etc.
+5. **Role match** — proximity to a target career path (e.g., Data Science)
 
-> I can't stress enough, this is not the final version
+> This is an early MVP and will evolve.
+
+## Configuration
+
+Tune behavior via `config.yaml`:
+
+```yaml
+model:
+  embedding: all-MiniLM-L6-v2
+  tfidf_max_features: 1000
+  advice_threshold: 0.5
+```
+
+## Project Structure
+
+```
+src/
+  convert_dataset.py        # CSV → text conversion
+  convert_test_data.py      # PDF dir → text conversion
+  train_classifier.py       # Train baseline classifier
+  predict.py                # Predict class for a resume text
+  advice.py                 # Generate heuristic advice (MVP)
+models/                     # Saved models/artifacts
+data/                       # Raw/test/processed data
+assets/                     # Plots and images
+```
+
+## Roadmap
+
+- Experiment with additional classifiers (SVM, RandomForest, XGBoost)
+- Improve advice heuristics and scoring
+- Add evaluation on held-out test sets and reporting
+- Streamline CLI and naming for consistency
+- Optional lightweight web UI
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to open a PR or issue.
+
