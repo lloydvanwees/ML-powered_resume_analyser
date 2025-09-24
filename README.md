@@ -2,7 +2,6 @@
 
 Local, privacy-friendly resume analysis and classification using traditional ML and modern embeddings. Convert resumes, train a classifier, predict categories, and generate actionable advice — all on your machine.
 
-This project was inspired by [SpicychieF05's AI Powered Resume Screening System](https://github.com/SpicychieF05/Ai-Resume-Screening-System).
 
 ## Features
 
